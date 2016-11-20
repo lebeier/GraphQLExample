@@ -18,14 +18,14 @@ class CategoryNode(DjangoObjectType):
         model = Category
         interfaces = (Node, )
         filter_fields = ['name', 'books']
-        filter_order_by = ['name']
+        filter_order_by = ('name')
 
 class BookNode(DjangoObjectType):
     class Meta:
         model = Book
         interfaces = (Node, )
         filter_fields = ['name']
-        filter_order_by = ['name']
+        filter_order_by = ('name')
 
 class NewCategory(ClientIDMutation):
     category = Field(CategoryNode)
